@@ -66,7 +66,7 @@ class ClassicReset(ResetStrategy):
     def __call__(self):
         self._setDTR(False)  # IO0=HIGH
         self._setRTS(True)  # EN=LOW, chip in reset
-        time.sleep(0.1)
+        time.sleep(0.5)
         self._setDTR(True)  # IO0=LOW
         self._setRTS(False)  # EN=HIGH, chip out of reset
         time.sleep(self.reset_delay)
